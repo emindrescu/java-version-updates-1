@@ -3,6 +3,7 @@ package com.cydeo.animalTask;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -31,9 +32,13 @@ public class Main {
                 .sorted(Comparator.comparing(Animal::getAge))  //Sorting by age (ascending)
                 .collect(Collectors.toList());  //Adding to a collection
         sorted.forEach(System.out::println);
+        System.out.println("---------------------------");
 
-
-
+        Optional< String> oldestPredatorAge =animals.stream()
+                .filter(animal -> animal.getClassification().equals(Classification.PREDATOR)) //Getting the oldest predator
+                .max(Comparator.comparing(Animal::getAge))
+                .map(Animal::getName);
+        oldestPredatorAge.ifPresent(System.out::println);
 
 
     }
