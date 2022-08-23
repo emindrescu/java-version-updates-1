@@ -11,3 +11,4 @@ public class CharStreamTask {
                 .forEach(System.out::println);
     }
 }
+//Given a list of words, print the number of characters for each word.
