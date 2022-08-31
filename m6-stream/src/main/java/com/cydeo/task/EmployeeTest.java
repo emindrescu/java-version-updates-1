@@ -1,5 +1,7 @@
 package com.cydeo.task;
 
+import java.util.List;
+
 public class EmployeeTest {
     public static void main(String[] args) {
 //print all emails
@@ -11,7 +13,13 @@ public class EmployeeTest {
 
         System.out.println("Print all phone numbers");
         EmployeeData.readAll()
-                .map(Employee::getEmpPhoneNumbers)
+                .flatMap(employee-> employee.getEmpPhoneNumbers().stream())
+                .forEach(System.out::println);
+
+        System.out.println("Print all phone numbers with Double Colon operator");
+        EmployeeData.readAll()
+                .map(Employee::getEmpPhoneNumbers) //it's stream now, let's flat it:
+                .flatMap(List::stream)
                 .forEach(System.out::println);
     }
 }

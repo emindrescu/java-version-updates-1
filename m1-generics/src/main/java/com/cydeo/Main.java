@@ -15,7 +15,6 @@ public class Main {
 //        items.add("Apple");
 
 
-
         printDoubled(items);
 
 
@@ -25,7 +24,7 @@ public class Main {
         BaseballPlayer pat = new BaseballPlayer("Pat");
         SoccerPlayer beckham = new SoccerPlayer("Beckham");
 
-        Team<SoccerPlayer> liverpool = new Team("Liverpool"); //Team accepting any object
+        Team<SoccerPlayer> liverpool = new Team("Liverpool"); //Team accepts soccer players only
 
 
 //        liverpool.addPlayer(joe);

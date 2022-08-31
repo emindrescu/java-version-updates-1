@@ -16,7 +16,7 @@ public class Main {
         System.out.println(Currency.PENNY);
 
         System.out.println("How to get all constant");
-        Currency[] currencies = Currency.values();
+        Currency[] currencies = Currency.values(); //How to access all currencies (values(), creating an object
 
         for(Currency currency : currencies){
             System.out.println(currency);
@@ -53,7 +53,7 @@ public class Main {
 
     }
 
-    private static void calculate(double x, double y,Operation operation){
+    private static void calculate(double x, double y,Operation operation){ //operation: passing one of the operations
 
         switch(operation){
             case PLUS:
